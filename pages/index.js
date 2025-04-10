@@ -52,9 +52,9 @@ export default function Home() {
   }, []);
 
   const backgroundImages = [
-    "url('img1.jpg')",
-    "url('img2.jpg')",
-    "url('img3.jpg')",
+    "url('/img1.jpg')",
+    "url('/img2.jpg')",
+    "url('/img3.jpg')"
   ];
 
   const handleInputChange = (e) => {
