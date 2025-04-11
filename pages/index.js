@@ -169,6 +169,9 @@ export default function Home() {
         }
       );
 
+      console.log("API Endpoint:", process.env.NEXT_PUBLIC_API_URL);
+
+
       if (response.ok) {
         setSubmitSuccess(true);
         setServerValidationErrors({});
