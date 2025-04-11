@@ -81,7 +81,7 @@ export default function Home() {
     });
   };
 
-  // Form validation
+  // Form data validation
   const validateForm = () => {
     const errors = {};
 
