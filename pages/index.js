@@ -228,7 +228,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-opacity-50 flex items-center justify-center">
           <div className="text-center text-white px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-2">TicketHub</h1>
-            <p className="text-xl md:text-2xl">Get tickets for the hottest concerts</p>
+            <p className="text-xl md:text-2xl">Get tickets for the best concerts</p>
           </div>
         </div>
       </header>
