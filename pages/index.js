@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 
 // Sample concert data 
 const CONCERTS = [
-  { id: 1, title: "Forro Night", date: "May 15, 2025", price: 89.99, venue: "Downtown Arena" },
-  { id: 2, title: "Rock Concert", date: "June 20, 2025", price: 65.50, venue: "Symphony Hall" },
-  { id: 3, title: "Sertanejo Festival", date: "July 10, 2025", price: 75.00, venue: "Stadium Center" },
+  { id: 1, title: "Forro Night", date: "May 15, 2025", price: 89.99, venue: "Bahia" },
+  { id: 2, title: "Rock Concert", date: "June 20, 2025", price: 65.50, venue: "Minas Gerais" },
+  { id: 3, title: "Sertanejo Festival", date: "July 10, 2025", price: 75.00, venue: "Mato Grosso do Sul" },
 ];
 
 export default function Home() {
@@ -42,7 +42,7 @@ export default function Home() {
   const [submitError, setSubmitError] = useState("");
   const [serverValidationErrors, setServerValidationErrors] = useState({});
 
-  // Change background images
+  // Changes header background images
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 3);
@@ -220,7 +220,7 @@ export default function Home() {
     <div
       className={`${geistSans.className} ${geistMono.className} bg-neutral-100 min-h-screen font-[family-name:var(--font-geist-sans)]`}
     >
-      {/* Header with background image */}
+      {/* Header with transition background image */}
       <header
         className="relative h-150 bg-cover bg-top transition-all duration-1000 ease-in-out"
         style={{ backgroundImage: backgroundImages[currentImageIndex] }}
@@ -270,7 +270,7 @@ export default function Home() {
           {submitSuccess ? (
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
               <p className="font-bold">Success!</p>
-              <p>Your tickets have been purchased. Check your email for confirmation.</p>
+              <p>Your tickets have been purchased.</p>
             </div>
           ) : null}
 
@@ -305,7 +305,7 @@ export default function Home() {
                     onChange={handleInputChange}
                     className={`w-full px-3 py-2 border rounded-md ${formErrors.name ? "border-red-500" : "border-gray-300"
                       }`}
-                      maxLength={200}
+                    maxLength={200}
                   />
                   {formErrors.name && <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>}
                 </div>
@@ -521,7 +521,7 @@ export default function Home() {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-md font-semibold text-lg hover:bg-blue-700 transition-colors disabled:bg-blue-300"
+                className="w-full bg-black text-white py-3 px-6 rounded-md font-semibold text-lg hover:bg-neutral-800 transition-colors disabled:bg-blue-300"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Processing..." : "Purchase Tickets"}
@@ -532,32 +532,12 @@ export default function Home() {
       </main>
 
       <footer className="bg-gray-800 text-white py-8 mt-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between">
-            <div className="mb-6 md:mb-0">
-              <h2 className="text-2xl font-bold mb-2">TicketHub</h2>
-              <p className="text-gray-400">Get tickets for the best concerts</p>
-            </div>
-            <div className="grid grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Contact</h3>
-                <ul className="space-y-1 text-gray-400">
-                  <li>info@tickethub.example.com</li>
-                  <li>1-800-TICKETS</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Legal</h3>
-                <ul className="space-y-1 text-gray-400">
-                  <li>Terms of Service</li>
-                  <li>Privacy Policy</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-            <p>© 2025 TicketHub. Iasmin Veronez.</p>
-          </div>
+        <div className="flex flex-col text-center">
+          <h2 className="text-2xl font-bold mb-2">TicketHub</h2>
+          <p className="text-gray-400">Get tickets for the best concerts</p>
+        </div>
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+          <p>2025 TicketHub. Iasmin Veronez.</p>
         </div>
       </footer>
     </div>
